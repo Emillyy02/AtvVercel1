@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ Titulo }}</title>
+    <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+    <div>
+        <h1>{{ Titulo }}</h1>
+    </div>
+    {% for Sapatos in ListaSapatos %}
+        <div class="sapatos-card">
+            <h2>Modelo:{{ Sapatos.modelo }}</h2>
+            <p>Marca: {{ Sapatos.marca }}</p>
+            <p>Categoria: {{ Sapatos.categoria }}</p>
+            <p>Tamanho: {{ Sapatos.tamanho }} </p>
+            <p>Cor:{{ Sapatos.cor }}</p>
+            <br>
+        <a href="/excluir/{{ Sapatos.idsapatos }}">Excluir</a>
+        <a href="/editar/{{ Sapatos.idsapatos }}">Editar</a>
+
+
+        </div>
+    {%endfor%}
+
+</body>
+</html>
